@@ -9,12 +9,11 @@
 
 const GLuint WIDTH = 1200, HEIGHT = 1000;
 TextRenderer::TextRenderer(const std::string& fontPath, unsigned int width, unsigned int height) {
-    std::cout << "Constructing TextRenderer" << std::endl;
     // FreeType initialization
     if (FT_Init_FreeType(&ft)) {
         std::cerr << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
         return;
-    } else { std::cout << "FT library loaded" << std::endl; }
+    }
     
     LoadCharacters(fontPath);
 
@@ -31,7 +30,6 @@ TextRenderer::TextRenderer(const std::string& fontPath, unsigned int width, unsi
 
 
 void TextRenderer::LoadCharacters(const std::string& fontPath) {
-    std::cout << "Rendering text" << std::endl;
     std::string font_name = std::filesystem::path(fontPath);
     if(font_name.empty()) {
         std::cout << "ERROR::FREETYPE: Failed to load font_name" << std::endl;
@@ -43,7 +41,6 @@ void TextRenderer::LoadCharacters(const std::string& fontPath) {
         return;
     } else 
     {   
-        std::cout << "Rendering 1" << std::endl;
           // set size to load glyphs as
         FT_Set_Pixel_Sizes(face, 0, 48);
 
