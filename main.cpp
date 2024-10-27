@@ -103,12 +103,20 @@ pos /= pos.w; // Perspective divide
 float screenX = (pos.x * 0.5f + 0.5f) * WIDTH;
 float screenY = (pos.y * -0.5f + 0.5f) * HEIGHT;
 
-// Adjust screenY to position the text below the cube
-float textOffset = 300.0f;
-screenY -= textOffset;
 
-std::string text = std::to_string(shinyValue);
-textRenderer.RenderText(textShader, text, screenX, screenY, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f));
+ std::string text = std::to_string(shinyValue);
+ if(shinyValue < 32.0) 
+ { 
+     float textOffset = 170.0f; // Adjust screenY to position the text below the cube
+     screenY += textOffset;
+     textRenderer.RenderText(textShader, text, screenX, screenY, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f)); 
+ 
+ } 
+ else {
+     float textOffset = 730.0f; // Adjust screenY to position the text below the cube
+     screenY -= textOffset;
+     textRenderer.RenderText(textShader, text, screenX, screenY, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f)); 
+ }
 }   
 
 // The MAIN function, from here we start the application and run the game loop
