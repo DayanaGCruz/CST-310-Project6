@@ -23,6 +23,8 @@ Run the following commands in linux terminal ->
 
 Verify that all header files and libs for these installations are in /usr/include to avoid include directive errors
 
+Move FreeType installation to directory include statements of project files expect if not automatic with installation 
+
 	cd /usr/include
   	cd freetype2
   	sudo mv * /usr/include
