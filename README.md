@@ -12,21 +12,22 @@ Install Windows Subsystem for Linux (WSL) Installation
 DEPENDENCIES __________________
 
 Run the following commands in linux terminal ->
-sudo apt-get update
-sudo apt-get install build-essential
-sudo apt-get install libglew-dev
-sudo apt-get install libglm-dev
-sudo apt install libglfw3-dev
-sudo apt install libfreetype6-dev
+	
+ 	sudo apt-get update
+	sudo apt-get install build-essential
+	sudo apt-get install libglew-dev
+	sudo apt-get install libglm-dev
+	sudo apt install libglfw3-dev
+	sudo apt install libfreetype6-dev
 
 
 Verify that all header files and libs for these installations are in /usr/include to avoid include directive errors
 
 	cd /usr/include
-  cd freetype2
-  sudo mv * /usr/include
-  cd ..
-  sudo rm freetype2
+  	cd freetype2
+  	sudo mv * /usr/include
+  	cd ..
+  	sudo rm freetype2
 
 NOTES __________________________
 
@@ -36,5 +37,6 @@ COMPILATION ____________________
 
 Naviagate to directory with main.cpp using cd command (ysw/src/main.cpp)
 In terminal enter the following commands
-g++ main.cpp TextRenderer.cpp -o run -lGL -lGLEW -lglfw -lfreetype
-./run
+	
+ 	g++ main.cpp TextRenderer.cpp -o run -lGL -lGLEW -lglfw -lfreetype
+	./run
